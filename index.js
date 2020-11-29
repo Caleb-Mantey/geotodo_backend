@@ -5,7 +5,7 @@ var router = require("./server/routes");
 
 app.use(cors());
 app.use(express.json());
-const port = 3001;
+const port = 5000;
 
 app.use("/api/todos/", router);
 
