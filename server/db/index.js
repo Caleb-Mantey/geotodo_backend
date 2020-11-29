@@ -33,7 +33,17 @@ myDb.one = (id) => {
 myDb.add = (title) => {
     return new Promise((resolve, reject) => {
          con.query("INSERT INTO task (`title`,`date`)  "
-         + " VALUES(?,?)", [title, Date.now()], (error,results) => {
+         + " VALUES(?,Now())", [title], (error,results) => {
+             if(error) reject(error);
+             resolve(results)
+         } )
+     })
+ }
+
+ myDb.update = (title, id) => {
+    return new Promise((resolve, reject) => {
+         con.query("UPDATE task SET title = ? WHERE id = ?  "
+         , [title,id], (error,results) => {
              if(error) reject(error);
              resolve(results)
          } )
@@ -42,7 +52,7 @@ myDb.add = (title) => {
 
  myDb.delete = (id) => {
     return new Promise((resolve, reject) => {
-         con.query("DELETE * FROM `task` WHERE id=?", [id], (error,results) => {
+         con.query("DELETE FROM `task` WHERE id=?", [id], (error,results) => {
              if(error) reject(error);
              resolve(results)
          } )
