@@ -13,6 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: pm2 stop backend
       - run: npm ci
       - run: pm2 start backend
-      - run: pm2 status
