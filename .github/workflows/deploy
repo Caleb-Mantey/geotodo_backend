@@ -24,3 +24,4 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: pm2 start backend
+      - run: pm2 status
