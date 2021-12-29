@@ -20,7 +20,4 @@ A simple nodejs and mysql project
 
     ```
 
-| Example | An example |
------
-| 1        |      Hello     |
-| 2       |      Hello     |
+> Simple node application 
